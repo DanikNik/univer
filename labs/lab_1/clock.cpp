@@ -80,7 +80,7 @@ int main(){
         hours_correct = 1;
     }
     else{
-        cout << "[-] hours incorrect!!!"
+        cout << "[-] hours incorrect!!!";
     }
   }
 
@@ -91,7 +91,7 @@ int main(){
         minutes_correct = 1;
     }
     else{
-        cout << '[-] minutes incorrect!!!'
+        cout << "[-] minutes incorrect!!!";
     }
   }
 
