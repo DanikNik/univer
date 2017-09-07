@@ -70,19 +70,32 @@ int print_time(int hours, int minutes){
 
 int main(){
   int hours, minutes;
-  bool is_correct = false;
-  while (is_correct == false) {
-    cout << "Enter hours: ";
+  bool hours_correct = 0;
+  bool minutes_correct = 0;
+
+  while (hours_correct == 0) {
+    cout << "[?] Enter hours: ";
     cin >> hours;
-    cout << "Enter minutes: ";
-    cin >> minutes;
-    if ((0 <= hours) && (hours <= 23) && (0 <= minutes) && (minutes <= 59)) {
-      is_correct = true;
+    if(hours >= 0 and hours <= 23){
+        hours_correct = 1;
     }
     else{
-      cout << "NEPRAVIL'NO BLIN!" << endl;
+        cout << "[-] hours incorrect!!!"
     }
   }
+
+  while (minutes_correct == 0) {
+    cout << "[?] Enter minutes: ";
+    cin >> minutes;
+    if(minutes >= 0 and minutes <= 59){
+        minutes_correct = 1;
+    }
+    else{
+        cout << '[-] minutes incorrect!!!'
+    }
+  }
+
+
   print_time(hours, minutes);
   return 0;
 }
