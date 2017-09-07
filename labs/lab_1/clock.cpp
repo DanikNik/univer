@@ -27,10 +27,10 @@ int print_time(int hours, int minutes){
 
 
         if (minutes == 0){
-            if(hours < 4){cout << "ночи ровно" << endl; return 0;}
-            else if(hours >= 4 and hours < 12){cout << "утра ровно" << endl; return 0;}
-            else if(hours >= 12 and hours < 16){cout << "дня ровно" << endl; return 0;}
-            else if(hours >= 16 and hours <= 23){cout << "вечера ровно" << endl; return 0;}
+            if(hours < 4){cout << " ночи ровно" << endl; return 0;}
+            else if(hours >= 4 and hours < 12){cout << " утра ровно" << endl; return 0;}
+            else if(hours >= 12 and hours < 16){cout << " дня ровно" << endl; return 0;}
+            else if(hours >= 16 and hours <= 23){cout << " вечера ровно" << endl; return 0;}
         }
         else{
             cout << ' ' << minutes << " минут";
