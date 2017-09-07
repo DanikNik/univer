@@ -18,11 +18,12 @@ int print_time(int hours, int minutes){
         else if(hours > 12 && hours <= 23){
             cout << hours % 12;
         }
+        cout << " час";
+        int un_hours = hours % 12;
 
-
-        if(hours % 12== 1){cout << " час ";}
-        else if(hours % 12 == 2 || hours % 12 == 3 || hours % 12 == 4){cout << " часа ";}
-        else{cout << " часов ";}
+        if(un_hours >= 2 and un_hours <= 4){cout << "а";}
+        else if(un_hours == 1){cout <<"";}
+        else{cout << "ов";}
 
 
         if (minutes == 0){
@@ -32,7 +33,7 @@ int print_time(int hours, int minutes){
             else if(hours >= 16 and hours <= 23){cout << "вечера ровно" << endl; return 0;}
         }
         else{
-            cout << minutes << " минут";
+            cout << ' ' << minutes << " минут";
             int un_minutes = minutes % 10;
 
             if(un_minutes >=1 and un_minutes <=4){
