@@ -26,44 +26,26 @@ int print_time(int hours, int minutes){
 
 
         if (minutes == 0){
-            if(hours < 6){cout << "ночи ровно" << endl; return 0;}
-            else if(hours >= 6 and hours < 12){cout << "утра ровно" << endl; return 0;}
-            else if(hours >= 12 and hours < 18){cout << "дня ровно" << endl; return 0;}
-            else if(hours >= 18 and hours <= 23){cout << "вечера ровно" << endl; return 0;}
+            if(hours < 4){cout << "ночи ровно" << endl; return 0;}
+            else if(hours >= 4 and hours < 12){cout << "утра ровно" << endl; return 0;}
+            else if(hours >= 12 and hours < 16){cout << "дня ровно" << endl; return 0;}
+            else if(hours >= 16 and hours <= 23){cout << "вечера ровно" << endl; return 0;}
         }
         else{
-            cout << minutes;
-            int minuta[5] = {1, 21, 31, 41, 51};
-            int minuty[15] = {2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54};
-            bool in_minuta = 0;
-            bool in_minuty = 0;
-            for(int i=0; i<5; i++){
-                if(minutes == minuta[i]){
-                    in_minuta = 1;
-                    break;
-                }
-            }
-            for(int i=0; i<15; i++){
-                if(minutes == minuty[i]){
-                    in_minuty = 1;
-                    break;
+            cout << minutes << " минут";
+            int un_minutes = minutes % 10;
+
+            if(un_minutes >=1 and un_minutes <=4){
+                if(!(minutes >= 11 and minutes <= 14)){
+                    if(un_minutes == 1){cout << "а";}
+                    else{cout << "ы";}
                 }
             }
 
-            if(in_minuta == 1){
-                cout << " минута";
-            }
-            else if(in_minuty == 1){
-                cout << " минуты";
-            }
-            else{
-                cout << " минут";
-            }
-
-            if(hours < 6){cout << " ночи" << endl; return 0;}
-            else if(hours >= 6 and hours < 12){cout << " утра" << endl; return 0;}
-            else if(hours >= 12 and hours < 18){cout << " дня" << endl; return 0;}
-            else if(hours >= 18 and hours <= 23){cout << " вечера" << endl; return 0;}
+            if(hours < 4){cout << " ночи" << endl; return 0;}
+            else if(hours >= 4 and hours < 12){cout << " утра" << endl; return 0;}
+            else if(hours >= 12 and hours < 16){cout << " дня" << endl; return 0;}
+            else if(hours >= 16 and hours <= 23){cout << " вечера" << endl; return 0;}
         }
     }
 }
