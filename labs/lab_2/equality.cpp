@@ -6,11 +6,11 @@ float solve(float a, float b, float c){
     if (a == 0){
         if (b == 0){
             if (c == 0){
-                cout << "infinity\n";
+                cout << "[inf] infinity\n";
                 return 1;
             }
             else{
-                cout << "no solutions\n";
+                cout << "[0] no solutions\n";
                 return 1;
             }
         }
@@ -22,29 +22,30 @@ float solve(float a, float b, float c){
     else{
         float descriminant = b*b - 4*a*c;
         if (descriminant >= 0){
-            float x1, x2;
-            x1 = (-b + sqrt(descriminant))/(2*a);
-            x2 = (-b - sqrt(descriminant))/(2*a);
-            if (x1 == x2){
-                cout << "solution is " << x1 << endl;
-                return 1;
+            if (descriminant == 0){
+                float x0 = -b/(2*a);
+                cout << "[1] solution is " << x0 << endl;
             }
             else{
-                cout << "solutions are " << x1 << " and " << x2 << endl;
+                float decr_sqrt = sqrt(descriminant)/(2*a);
+                float x1 = -b/(2*a) + decr_sqrt;
+                float x2 = -b/(2*a) - decr_sqrt;
+                cout << "[2] solutions are " << x1 << " and " << x2 << endl;
                 return 1;
             }
         }
         else{
-            cout << "no solutions\n";
+            cout << "[0] no solutions\n";
             return 1;
         }
     }
 }
 
 int main(){
-    int a, b, c;
+    float a, b, c;
     a = b = c = 0;
-    cout << "[?] enter 3 indexes splitting with 'SPACE' symbol: \n";
+    cout << "[?] enter 3 real indexes splitting with 'SPACE' symbol: \n[?]values: ";
     cin >> a >> b >> c;
     solve(a, b, c);
+    return 0;
 }
