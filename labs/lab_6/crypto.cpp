@@ -42,7 +42,6 @@ string decrypt(string input, string code_bn[], int code_bn_length) {
    int input_int[input.length()];
    for (int i=0; i < input.length(); i++){
        input_int[i] = ((int)input[i] - code_bn_int[i%code_bn_length]) % 256;
-       if (input_int[i] < 0){input_int[i]+=256;}
        decrypted_text+=(char)input_int[i];
    }
 
