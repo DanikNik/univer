@@ -15,7 +15,7 @@ float solve(float a, float b, float c){
             }
         }
         else{
-            cout << -c/b << '\n';
+            cout << "[1] solution is " << -c/b << '\n';
             return 1;
         }
     }
