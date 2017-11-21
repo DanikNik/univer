@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-float solve(float a, float b, float c){
+int solve(float a, float b, float c){
     if (a == 0){
         if (b == 0){
             if (c == 0){
@@ -43,7 +43,6 @@ float solve(float a, float b, float c){
 
 int main(){
     float a, b, c;
-    a = b = c = 0;
     cout << "[?] enter 3 real indexes splitting with 'SPACE' symbol: \n[?]values: ";
     cin >> a >> b >> c;
     solve(a, b, c);
