@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-#define N 5
 #define N10 10
 #define N20 20
 #define N40 40

@@ -10,8 +10,8 @@ float f4(float x){return pow(x, 4);}
 float integral(float (*function)(float),float start_point, float end_point, int n){
     float calc_integral = 0;
     float delta = (end_point - start_point) / n;
-    for (int i = 0; i <= n; i++) {
-        calc_integral+=function(start_point + delta*i)*delta;
+    for (int i = 0; i < n; i++) {
+        calc_integral+=function(start_point+delta*0.5 + delta*i)*delta;
     }
     return calc_integral;
 }
@@ -21,6 +21,7 @@ int main(int argc, char const *argv[]) {
     func_pointer array[4] = {f1, f2, f3, f4};
 
     float start_x, end_x, precision;
+    cout << "[?] Enter start_x, end_x and precision: ";
     cin >> start_x >> end_x >> precision;
 
     float accuracy_delta = 1;

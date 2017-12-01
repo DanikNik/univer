@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-/*double ** minor(double ** matrix, int rang, int row, int column){
+double ** minor(double ** matrix, int rang, int row, int column){
   double ** minor = new int * [rang -1];
   for (size_t i = 0; i < rang-1; i++) {
     minor[i] = new double [rang - 1];
@@ -17,17 +17,18 @@ using namespace std;
       }
     }
   }
-}/*
+}
 
-/*double determinant(double **matrix, rang){
+double determinant(double **matrix, rang){
   double det = 0;
   if (rang > 2){
     for (size_t i = 0; i < rang; i++) {
+      /* code */
     }
   }
-}*/
+}
 
-/*double ** multiply_matrixes(double **matrix1, double **matrix2, int rang){
+double ** multiply_matrixes(double **matrix1, double **matrix2, int rang){
     double  **matrix_out =  new double * [rang];
     for (size_t i = 0; i < rang; i++) {
         matrix_out[i] = new double [rang];
@@ -42,54 +43,20 @@ using namespace std;
         }
     }
     return matrix_out;
-}*/
+}
 
 double ** matrix_inversion(double ** in_matrix, int rang){
-    //заводим исходную матрицу
     double  **matrix =  new double * [rang];
     for (size_t i = 0; i < rang; i++) {
         matrix[i] = new double [rang];
     }
-    //создаем локальную копию вводной матрицы
     for (size_t i = 0; i < rang; i++) {
         for (size_t j = 0; j < rang; j++) {
-            matrix[i][j] = in_matrix[i][j];
-        }
-    }
-
-    //создаем единичную матрицу
-    double **elementary_matrix = new double *[rang];
-    for (size_t i = 0; i < rang; i++) {
-        elementary_matrix[i] = new double [rang];
-    }
-    for (size_t i = 0; i < rang; i++) {
-        for (size_t j = 0; j < rang; j++) {
-            if (i == j){
-                elementary_matrix[i][j] = 1
-            }
-            else{
-                elementary_matrix[i][j] = 0
-            }
-        }
-    }
-    double det;
-    for (size_t i = 0; i < rang-1; i++) {
-        det = matrix[i][i];                     //получаем единицу по главной диагонали
-        for (size_t j = 0; j < rang; j++) {
-            matrix[i][j] /= det;
-            elementary_matrix /= det;
-        }
-        for (size_t h = i+1; h < rang; h +) {
-            coefficient = matrix[h][i];
-            for (size_t c = 0; c < rang; c++) {
-                matrix[h][c] = matrix[h][c] - coefficient[i][c]*coefficient;
-            }
+            matrix[i][j] = in_matrix[i][j] + 1;
         }
     }
     return matrix;
 }
-
-
 
 int main(int argc, char const *argv[]) {
     int matrix_rang;
