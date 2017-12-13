@@ -32,7 +32,7 @@ int main(int argc, char const *argv[]) {
     cout << "[>] Enter new matrix dimension: ";
     cin >> dimension;
 
-    int display_width = 80; //ширина текстового поля терминала - 80 символов
+    int display_width = 160; //ширина текстового поля терминала - 80 символов
     int field_width = floor(display_width/dimension);
     cout << "[+] Calculated field_width: " << field_width << endl;
 
