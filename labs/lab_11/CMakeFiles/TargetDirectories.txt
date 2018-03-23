@@ -1,0 +1,3 @@
+/home/daniknik/projects/univer/labs/lab_11/CMakeFiles/rebuild_cache.dir
+/home/daniknik/projects/univer/labs/lab_11/CMakeFiles/database.dir
+/home/daniknik/projects/univer/labs/lab_11/CMakeFiles/edit_cache.dir

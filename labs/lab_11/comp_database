@@ -1,27 +1,27 @@
-Competitions date: 12.4.2013
+Competitions date: 21.12.2017
 --------COMPETITOR 0--------
-Name: ad
-Surname: ad
-Second name: sf
-Birth date: 12.9.9
+Name: b
+Surname: a
+Second name: c
+Birth date: 30.8.1990
 Sex: male
 Results:
-	comp1	1
-	comp2	2
-	comp3	3
-	comp4_m	4
-Sum: 10
+	comp1	8
+	comp2	8
+	comp3	8
+	comp4_m	8
+Sum: 32
 --------COMPETITOR 0--------
 --------COMPETITOR 1--------
-Name: ad
-Surname: ad
-Second name: sf
-Birth date: 12.9.9
+Name: b
+Surname: a
+Second name: c
+Birth date: 28.2.1990
 Sex: male
 Results:
-	comp1	1
-	comp2	2
-	comp3	3
-	comp4_m	4
-Sum: 10
+	comp1	8
+	comp2	8
+	comp3	8
+	comp4_m	8
+Sum: 32
 --------COMPETITOR 1--------

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniknik/projects/univer/labs/lab_11/database_raw.cpp
+lib.h
+/home/daniknik/projects/univer/labs/lab_11/lib.h
+
+/home/daniknik/projects/univer/labs/lab_11/lib.cpp
+lib.h
+/home/daniknik/projects/univer/labs/lab_11/lib.h
+
+/home/daniknik/projects/univer/labs/lab_11/lib.h
+iostream
+-
+fstream
+-
+string.h
+-
+cmath
+-
+

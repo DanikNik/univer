@@ -8,7 +8,7 @@ void get_sorted_array(char ** words, int word_counter){
     char * cur = new char [str_max_size];
     for(int i = 0; i < word_counter - 1; i++)
         for(int j = i + 1; j < word_counter; j++)
-            if(strcmp(words[i],words[j]) > 0)
+            if(strcmp(words[i], words[j]) > 0)
             {
                 strcpy(cur, words[i]);
                 strcpy(words[i], words[j]);
