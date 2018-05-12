@@ -4,8 +4,6 @@ MyClass::MyClass(){
     cout << "[?] enter new instance's val1, val2 and name\n";
     this -> name = new char [15];
     cin >> this -> val1 >> this -> val2 >> this -> name;
-    COUNTER++;
-    cout << "\t" << COUNTER << endl;
 }
 
 MyClass::MyClass(int a, int b){
@@ -17,8 +15,6 @@ MyClass::MyClass(int a, int b){
     this -> name = new char [15];
     cin >> buff;
     strcpy(this -> name, buff);
-    COUNTER++;
-    cout << "\t" << COUNTER << endl;
 }
 
 MyClass::MyClass(int a, int b, const char * n_name){
@@ -26,8 +22,6 @@ MyClass::MyClass(int a, int b, const char * n_name){
     this -> val2 = b;
     this -> name = new char [15];
     strcpy(this -> name, n_name);
-    COUNTER++;
-    cout << "\t" << COUNTER << endl;
 }
 
 MyClass::MyClass(int a, int b, char * n_name){
@@ -35,8 +29,6 @@ MyClass::MyClass(int a, int b, char * n_name){
     this -> val2 = b;
     this -> name = new char [15];
     strcpy(this -> name, n_name);
-    COUNTER++;
-    cout << "\t" << COUNTER << endl;
 }
 
 MyClass::MyClass(MyClass * instance){
@@ -47,10 +39,8 @@ MyClass::MyClass(MyClass * instance){
 }
 
 MyClass::~MyClass(){
-    cout << "deleting instance " << this -> name << endl;
+    // cout << "deleting instance " << this -> name << endl;
     delete [] name;
-    COUNTER--;
-    cout << "\t" << COUNTER << endl;
 }
 
 void MyClass::set_val1(int val){
@@ -73,42 +63,34 @@ void MyClass::get_info(){
 }
 
 ostream& operator << (ostream &os, MyClass &obj){
-    os << "[" << obj.name << "] " << obj.val1 << ' ' << obj.val2 << endl;
+    os << "[" << obj.name << "] " << obj.val1 << ' ' << obj.val2;
 }
 
-MyClass& operator + (int i){
-    this -> val1 += i;
-    this -> val2 += i;
-    return *this;
+MyClass MyClass::operator + (int i){
+    return MyClass(this -> val1 + i, this -> val2 + i, this -> name);
 }
 
-MyClass& operator - (int i){
-    this -> val1 -= i;
-    this -> val2 -= i;
-    return *this;
+MyClass MyClass::operator - (int i){
+    return MyClass(this -> val1 - i, this -> val2 - i, this -> name);
 }
 
-MyClass& operator + (MyClass& obj){
-    this -> val1 += obj.val1;
-    this -> val2 += obj.val2;
-    return *this;
+MyClass MyClass::operator + (MyClass& obj){
+    return MyClass(this -> val1 + obj.val1, this -> val2 + obj.val2, this -> name);
 }
-MyClass& operator - (MyClass& obj){
-    this -> val1 -= obj.val1;
-    this -> val2 -= obj.val2;
-    return *this;
+MyClass MyClass::operator - (MyClass& obj){
+    return MyClass(this -> val1 - obj.val1, this -> val2 - obj.val2, this -> name);
 }
-MyClass operator + (MyClass& obj1, MyClass& obj2){
-    return MyClass(obj1.val1 + obj2.val1, obj2.val2 + obj2.val2, strcat(obj1.name, obj2.name));
+// MyClass MyClass::operator + (int obj1, MyClass& obj2){
+    // return MyClass(obj2.val1 + i, obj2.val2 + i, obj2.name)
+// }
+// MyClass MyClass::operator - (int obj1, MyClass& obj2){
+    // return MyClass(obj2.val1 - i, obj2.val2 - i, obj2.name)
+// }
+bool operator > (MyClass& obj1, MyClass& obj2){
+    return obj1.val1 > obj2.val1;
 }
-MyClass operator - (MyClass& obj1, MyClass& obj2){
-    return MyClass(obj1.val1 - obj2.val1, obj2.val2 - obj2.val2, strcat(obj1.name, obj2.name));
-}
-bool operator > (MyClass& obj){
-    return this -> val1 > obj.val1;
-}
-bool operator < (MyClass& obj){
-    return this -> val1 < obj.val1;
+bool operator < (MyClass& obj1, MyClass& obj2){
+    return obj1.val1 < obj2.val1;
 }
 // MyClass& operator ++ (){
 //     this -> val1++;

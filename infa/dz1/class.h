@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <cstring>
+#include <iomanip>
+
 using namespace std;
 
 static int COUNTER = 0;
@@ -37,19 +39,21 @@ public:
     void set_name(char* n_name);
     void get_info();
 
-    void operator = (const MyClass& obj){
-        return MyClass(obj.val1, obj.val2, obj.name);
+    MyClass operator = (const MyClass& obj){
+        this -> val1 = obj.val1;
+        this -> val2 = obj.val2;
+        return *this;
     }
     friend ostream& operator << (ostream &os, MyClass &obj);
     friend istream& operator >> (istream &os, MyClass &obj);
-    MyClass& operator + (int i);
-    MyClass& operator - (int i);
-    MyClass& operator + (MyClass& obj);
-    MyClass& operator - (MyClass& obj);
-    MyClass& operator + (MyClass& obj1, MyClass& obj2);
-    MyClass& operator - (MyClass& obj1, MyClass& obj2);
-    bool operator > (MyClass& obj);
-    bool operator < (MyClass& obj);
+    MyClass operator + (int i);
+    MyClass operator - (int i);
+    MyClass operator + (MyClass& obj);
+    MyClass operator - (MyClass& obj);
+    // friend MyClass operator + (int obj1, MyClass& obj2);
+    // friend MyClass operator - (int obj1, MyClass& obj2);
+    friend bool operator > (MyClass& obj1, MyClass& obj2);
+    friend bool operator < (MyClass& obj1, MyClass& obj2);
     // MyClass& operator ++ ();
     // MyClass operator ++ (int);
 
