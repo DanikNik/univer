@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniknik/projects/univer/infa/dz4/Abstraction.h
+iostream
+-
+
+/home/daniknik/projects/univer/infa/dz4/main.cpp
+Abstraction.h
+/home/daniknik/projects/univer/infa/dz4/Abstraction.h
+

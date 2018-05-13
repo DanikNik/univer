@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniknik/projects/univer/infa/dz3/class.h
+iostream
+-
+string.h
+-
+
+/home/daniknik/projects/univer/infa/dz3/main.cpp
+class.h
+/home/daniknik/projects/univer/infa/dz3/class.h
+

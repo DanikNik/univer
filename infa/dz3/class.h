@@ -5,16 +5,16 @@
 #include <string.h>
 using namespace std;
 template<class T>
-class Stack{
+class DinArr{
 private:
     int length;
     T* data;
 public:
-    Stack(){
+    DinArr(){
         this -> length = 0;
     }
 
-    ~Stack(){
+    ~DinArr(){
         delete [] this -> data;
     }
 
@@ -55,7 +55,17 @@ public:
         delete [] temp;
         return temp_data;
     }
+
+    friend ostream& operator << (ostream &os, DinArr &obj){
+        for (int i = 0; i < obj.length; i++) {
+            os << obj.data[i] << ' ';
+        }
+    }
 };
 
+struct node{
+    int data;
+    node* prev;
+};
 
 #endif
